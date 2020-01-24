@@ -1,0 +1,30 @@
+---
+title: "README"
+author: "Polina Koroleva"
+date: "24 01 2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Getting and Cleaning the data. Course Project
+
+The data linked to from the course website represent data collected from the accelerometers from the Samsung Galaxy S smartphone. A full description is available at the site where the data was obtained:
+
+http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones 
+
+The data for the project:
+https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip 
+
+
+## Project steps (see run_analysis.R script)
+
+1. Download the dataset from web if it does not already exist in the working directory.
+2. Read both the train and test datasets and merge them into x(measurements), y(activity) and subject, respectively.
+3. Read the features and activity data. From the features extract columns  named 'mean'(-mean) and 'standard'(-std). 
+4. Modify column names to descriptive. See the CodeBook for data names modification. 
+5. Merge x, y(activity) and subject data using only data selected in Step 3.
+6. Replace activities in Activity column with the approapreate names refering activity label (loaded step 3).
+7. Generate 'Tidy Dataset' that consists of the average (mean) of each variable for each subject and each activity. See the result in tidy_dataset.txt.
